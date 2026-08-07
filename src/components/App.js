@@ -1,13 +1,13 @@
+import React from 'react';
+import EventTracker from './EventTracker';
+import './styles.css';
 
-import React from "react";
-import './../styles/App.css';
-
-const App = () => {
+function App() {
   return (
-    <div>
-        {/* Do not remove the main div */}
+    <div className="app-container">
+      <EventTracker />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

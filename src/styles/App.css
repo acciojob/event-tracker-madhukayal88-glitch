@@ -1,1 +1,339 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background: #f0f2f5;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.event-tracker-container {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  color: #1a1a2e;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.btn {
+  padding: 0.6rem 1.5rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.6rem;
+  background: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn.active {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.calendar-wrapper {
+  background: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+}
+
+/* React Big Calendar Overrides */
+.rbc-calendar {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif !important;
+}
+
+.rbc-event {
+  border-radius: 5px !important;
+  padding: 2px 6px !important;
+  font-weight: 600 !important;
+  font-size: 12px !important;
+}
+
+.rbc-event-content {
+  font-size: 12px !important;
+}
+
+.rbc-today {
+  background-color: #ebf4ff !important;
+}
+
+.rbc-day-slot .rbc-event {
+  border: none !important;
+}
+
+.rbc-header {
+  padding: 10px 3px !important;
+  font-weight: 700 !important;
+  color: #1a1a2e !important;
+  background: #f7fafc !important;
+}
+
+.rbc-off-range-bg {
+  background: #f7fafc !important;
+}
+
+.rbc-date-cell {
+  padding: 4px !important;
+}
+
+.rbc-row-segment {
+  padding: 0 2px !important;
+}
+
+/* Popup Styles */
+.popup-container {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  min-width: 400px;
+  max-width: 500px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.popup-header h2 {
+  font-size: 1.5rem;
+  color: #1a1a2e;
+}
+
+.popup-close {
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6c757d;
+  transition: all 0.3s ease;
+  padding: 0 0.5rem;
+}
+
+.popup-close:hover {
+  color: #1a1a2e;
+  transform: rotate(90deg);
+}
+
+.popup-body {
+  margin-bottom: 1.5rem;
+}
+
+.popup-date {
+  padding: 0.8rem;
+  background: #f7fafc;
+  border-radius: 0.6rem;
+  margin-bottom: 1rem;
+  color: #1a1a2e;
+}
+
+.popup-field {
+  margin-bottom: 1rem;
+}
+
+.popup-field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #2d3748;
+  font-size: 0.9rem;
+}
+
+.popup-input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.popup-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.popup-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 2px solid #e2e8f0;
+}
+
+.popup-footer-left {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.popup-footer-right {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mm-popup__btn {
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.mm-popup__btn--info {
+  background: #e2e8f0;
+  color: #1a1a2e;
+}
+
+.mm-popup__btn--info:hover {
+  background: #cbd5e1;
+}
+
+.mm-popup__btn--danger {
+  background: #fc8181;
+  color: white;
+}
+
+.mm-popup__btn--danger:hover {
+  background: #f56565;
+}
+
+.mm-popup__btn:not(.mm-popup__btn--info):not(.mm-popup__btn--danger) {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.mm-popup__btn:not(.mm-popup__btn--info):not(.mm-popup__btn--danger):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f7fafc;
+  border-radius: 0.8rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #1a1a2e;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+}
+
+.legend-color.past {
+  background-color: #de6987;
+}
+
+.legend-color.upcoming {
+  background-color: #8cbd4c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .event-tracker-container {
+    padding: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-buttons {
+    justify-content: center;
+  }
+
+  .popup-container {
+    min-width: unset;
+    max-width: 95%;
+    padding: 1.5rem;
+    margin: 0 auto;
+  }
+
+  .popup-footer {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .popup-footer-left,
+  .popup-footer-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .legend {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}

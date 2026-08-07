@@ -1,54 +1,36 @@
 {
-  "name": "react-boilerplate",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest --no-color 2>output.txt",
-    "start": "webpack-dev-server --mode development --watch --open --hot",
-    "build": "webpack --mode production"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "name": "event-tracker-madhukayal88-glitch",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "css-loader": "^4.3.0",
-    "jest-junit": "^11.1.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "style-loader": "^1.2.1",
-    "webpack-cli": "^3.3.12",
-    "cypress": "^9.5.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.1",
+    "moment": "^2.22.2",
+    "react-big-calendar": "^0.20.1",
+    "react-popup": "^0.9.3"
   },
-  "jest": {
-    "moduleNameMapper": {
-      "\\.(css|less|sass|scss)$": "<rootDir>/config/CSSStub.js"
-    },
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
-    "reporters": [
-      "default",
-      "jest-junit"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
     ]
   },
-  "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4",
-    "@testing-library/react": "^11.0.4",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.1.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.5",
-    "enzyme-to-json": "^3.5.0",
-    "html-webpack-plugin": "^4.5.0",
-    "jest": "^26.4.2",
-    "react-test-renderer": "^16.13.1",
-    "webpack": "^4.44.2",
-    "webpack-dev-server": "^3.11.0",
-    "xml-js": "^1.6.11"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
